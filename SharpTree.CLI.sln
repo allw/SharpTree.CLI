@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTree.CLI", "SharpTree.CLI\SharpTree.CLI.csproj", "{AB8E549F-AECD-496A-8EF7-DF4719AE29E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTree.CLI.Sample", "SharpTree.CLI.Sample\SharpTree.CLI.Sample.csproj", "{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB8E549F-AECD-496A-8EF7-DF4719AE29E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8E549F-AECD-496A-8EF7-DF4719AE29E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8E549F-AECD-496A-8EF7-DF4719AE29E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8E549F-AECD-496A-8EF7-DF4719AE29E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B67D329E-323A-46DD-9CA1-6554E9CAEC71}
+	EndGlobalSection
+EndGlobal
