@@ -20,14 +20,14 @@ namespace SharpTree.CLI.CLIUtils
             Console.WriteLine($@"{space}{selectable} {item.Label}");
         }
 
-        public static int GetSpaceLength(this TreeItem item)
-        {
-            return Constants.LEVELSPACELENGTH * (item.Level + 1);
-        }
-
         private static string GetSpace(this TreeItem item)
         {
             return new string(' ', item.GetSpaceLength());
+        }
+
+        public static int GetSpaceLength(this TreeItem item)
+        {
+            return Constants.LEVELSPACELENGTH * (item.Level + 1);
         }
     }
 }
