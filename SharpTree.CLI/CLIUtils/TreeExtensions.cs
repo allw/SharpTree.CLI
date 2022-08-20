@@ -23,26 +23,45 @@ namespace SharpTree.CLI.CLIUtils
 
             var selectableItems = tree.GetSelectableItems();
             currentLine = selectableItems[currentSelectedItem].Line;
+
+            Console.Clear();
+            Console.WriteLine("Navigate up and down with arrows.");
+            Console.WriteLine("Select with 'Space bar' or 'x'");
+            Console.WriteLine("Save with 'Enter'");
+            
+            foreach (var level in tree.Levels)
+            {
+                level.ToCLISelectable();
+            }
+            if (selectableItems.Count > 0)
+            {
+                currentLine = selectableItems[currentSelectedItem].Line;
+                Console.SetCursorPosition(selectableItems[currentSelectedItem].ColumnIndex + columnOffset, currentLine + lineOffset);
+            }
+
             do
             {
-
-                Console.Clear();
-                Console.WriteLine("Navigate up and down with arrows.");
-                Console.WriteLine("Select with 'space bar' or 'x'");
-                Console.WriteLine("Save with 'Enter'");
-                foreach (var level in tree.Levels)
-                {
-                    level.ToCLISelectable();
-                }
-                if (selectableItems.Count > 0)
-                {
-                    currentLine = selectableItems[currentSelectedItem].Line;
-                    Console.SetCursorPosition(selectableItems[currentSelectedItem].ColumnIndex + columnOffset, currentLine + lineOffset);
-                }
-
                 key = Console.ReadKey();
                 if(key.Key == ConsoleKey.X || key.Key == ConsoleKey.Spacebar)
                 {
+                    var currentPosition = Console.GetCursorPosition();
+                    if (!selectableItems[currentSelectedItem].Item.Selected)
+                    {
+                        if (key.Key == ConsoleKey.Spacebar)
+                        {
+                            Console.SetCursorPosition(currentPosition.Left - 1, currentPosition.Top);
+                            Console.Write('x');
+                        }
+                        currentPosition = Console.GetCursorPosition();
+                        Console.SetCursorPosition(currentPosition.Left - 1, currentPosition.Top);
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(currentPosition.Left - 1, currentPosition.Top);
+                        Console.Write(' ');
+                        currentPosition = Console.GetCursorPosition();
+                        Console.SetCursorPosition(currentPosition.Left - 1, currentPosition.Top);
+                    }
                     selectableItems[currentSelectedItem].Item.Selected = !selectableItems[currentSelectedItem].Item.Selected;
                 }
                 else if(key.Key == ConsoleKey.DownArrow)
@@ -51,6 +70,8 @@ namespace SharpTree.CLI.CLIUtils
                     {
                         currentSelectedItem++;
                     }
+                    currentLine = selectableItems[currentSelectedItem].Line;
+                    Console.SetCursorPosition(selectableItems[currentSelectedItem].ColumnIndex + columnOffset, currentLine + lineOffset);
                 }
                 else if(key.Key == ConsoleKey.UpArrow)
                 {
@@ -58,6 +79,8 @@ namespace SharpTree.CLI.CLIUtils
                     {
                         currentSelectedItem--;
                     }
+                    currentLine = selectableItems[currentSelectedItem].Line;
+                    Console.SetCursorPosition(selectableItems[currentSelectedItem].ColumnIndex + columnOffset, currentLine + lineOffset);
                 }
             } while (key.Key != ConsoleKey.Enter);
             Console.Clear();
