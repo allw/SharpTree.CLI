@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTree.CLI", "SharpTree.CLI\SharpTree.CLI.csproj", "{AB8E549F-AECD-496A-8EF7-DF4719AE29E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpTree.CLI", "SharpTree.CLI\SharpTree.CLI.csproj", "{AB8E549F-AECD-496A-8EF7-DF4719AE29E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTree.CLI.Sample", "SharpTree.CLI.Sample\SharpTree.CLI.Sample.csproj", "{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpTree.CLI.Sample", "SharpTree.CLI.Sample\SharpTree.CLI.Sample.csproj", "{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTree.CLI.Tests", "SharpTree.CLI.Tests\SharpTree.CLI.Tests.csproj", "{F8A5A52E-4391-492F-AF8D-6814BF3CAEBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{575092BC-6DDD-402B-8AEB-66C4EEDB9CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A5A52E-4391-492F-AF8D-6814BF3CAEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A5A52E-4391-492F-AF8D-6814BF3CAEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A5A52E-4391-492F-AF8D-6814BF3CAEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A5A52E-4391-492F-AF8D-6814BF3CAEBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

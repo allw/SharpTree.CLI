@@ -39,6 +39,7 @@ namespace SharpTree.CLI.TreeItems
                     result.Add(new SelectableItemInfo(line, item.GetSpaceLength() - 1, item));
                 }
                 line++;
+
             }
             foreach (var subLevel in level.SubLevels)
             {
