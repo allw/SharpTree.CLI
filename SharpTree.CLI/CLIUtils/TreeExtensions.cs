@@ -20,9 +20,11 @@ namespace SharpTree.CLI.CLIUtils
 
         public static void ToCLISelectable(this Tree tree, bool printInstructions)
         {
+            Tree original = CloneUtils.DeepClone<Tree>(tree);
+
             ConsoleKeyInfo key;
             int columnOffset = 3;
-            int lineOffset = printInstructions ? 3 : 0;
+            int lineOffset = printInstructions ? 3 : 1;
             int currentSelectedItem = 0;
             int currentLine = 0;
 
