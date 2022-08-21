@@ -2,6 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Description>CLI tree view for C# applications.
+Currently supported items:
+- selectable items
+</Description>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <Copyright>Allan Wiese</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/allw/SharpTree.CLI</RepositoryUrl>
+    <PackageTags>cli csharp c# treelist</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

@@ -15,19 +15,27 @@ namespace SharpTree.CLI.CLIUtils
 
         public static void ToCLISelectable(this Tree tree)
         {
+            ToCLISelectable(tree, false);
+        }
+
+        public static void ToCLISelectable(this Tree tree, bool printInstructions)
+        {
             ConsoleKeyInfo key;
             int columnOffset = 3;
-            int lineOffset = 3;
+            int lineOffset = printInstructions ? 3 : 0;
             int currentSelectedItem = 0;
             int currentLine = 0;
 
             var selectableItems = tree.GetSelectableItems();
             currentLine = selectableItems[currentSelectedItem].Line;
 
-            Console.Clear();
-            Console.WriteLine("Navigate up and down with arrows.");
-            Console.WriteLine("Select with 'Space bar' or 'x'");
-            Console.WriteLine("Save with 'Enter'");
+            if (printInstructions)
+            {
+                Console.Clear();
+                Console.WriteLine("Navigate up and down with arrows.");
+                Console.WriteLine("Select with 'Space bar' or 'x'");
+                Console.WriteLine("Save with 'Enter'");
+            }
             
             foreach (var level in tree.Levels)
             {
@@ -83,7 +91,6 @@ namespace SharpTree.CLI.CLIUtils
                     Console.SetCursorPosition(selectableItems[currentSelectedItem].ColumnIndex + columnOffset, currentLine + lineOffset);
                 }
             } while (key.Key != ConsoleKey.Enter);
-            Console.Clear();
         }
     }
 }
