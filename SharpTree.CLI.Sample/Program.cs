@@ -19,7 +19,7 @@ namespace SharpTree.CLI.Sample
 
             Console.WriteLine();
 
-            tree.ToCLISelectable();
+            var tree2 = tree.ToCLISelectable();
 
             Console.ReadKey();
         }

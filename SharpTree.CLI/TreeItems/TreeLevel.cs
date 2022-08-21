@@ -9,6 +9,10 @@ namespace SharpTree.CLI.TreeItems
         public List<TreeLevel> SubLevels { get; set; }
         public int Level { get; set; }
 
+        public TreeLevel()
+        {
+        }
+
         public TreeLevel(string label)
             : this(label, 1)
         {

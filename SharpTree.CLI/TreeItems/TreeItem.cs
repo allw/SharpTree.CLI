@@ -7,6 +7,10 @@
         public string Label { get; set; }
         public int Level { get; set; }
 
+        public TreeItem()
+        {
+        }
+
         public TreeItem(string label, int level)
             : this(label, level, false)
         {

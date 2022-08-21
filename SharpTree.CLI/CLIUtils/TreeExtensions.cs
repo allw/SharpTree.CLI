@@ -1,4 +1,5 @@
 ﻿using SharpTree.CLI.TreeItems;
+using SharpTree.CLI.Utils;
 using System;
 
 namespace SharpTree.CLI.CLIUtils
@@ -13,12 +14,12 @@ namespace SharpTree.CLI.CLIUtils
             }
         }
 
-        public static void ToCLISelectable(this Tree tree)
+        public static Tree ToCLISelectable(this Tree tree)
         {
-            ToCLISelectable(tree, false);
+            return ToCLISelectable(tree, false);
         }
 
-        public static void ToCLISelectable(this Tree tree, bool printInstructions)
+        public static Tree ToCLISelectable(this Tree tree, bool printInstructions)
         {
             Tree original = CloneUtils.DeepClone<Tree>(tree);
 
@@ -92,7 +93,12 @@ namespace SharpTree.CLI.CLIUtils
                     currentLine = selectableItems[currentSelectedItem].Line;
                     Console.SetCursorPosition(selectableItems[currentSelectedItem].ColumnIndex + columnOffset, currentLine + lineOffset);
                 }
-            } while (key.Key != ConsoleKey.Enter);
+                else if(key.Key == ConsoleKey.Escape)
+                {
+                    return original;
+                }
+            } while (key.Key != ConsoleKey.Enter && key.Key != ConsoleKey.Escape);
+            return tree;
         }
     }
 }
